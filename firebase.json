@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "mono-app",
     "public": "out",
     "ignore": [
       "firebase.json",
