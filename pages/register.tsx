@@ -15,11 +15,11 @@ const Home: NextPage = () => {
 
         <section>
           <form action=''>
-            <div className='d-flex mb-3'>
-              <input type='text' className='form-control me-3'
+            <div className='d-flex flex-wrap flex-md-nowrap'>
+              <input type='text' className='form-control me-md-3 mb-3'
                      placeholder='First name' />
 
-              <input type='text' className='form-control'
+              <input type='text' className='form-control mb-3'
                      placeholder='Last name' />
             </div>
 
