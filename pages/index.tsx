@@ -28,15 +28,15 @@ const Home: NextPage = () => {
                      placeholder='Password' />
             </div>
 
-            <div className='d-flex mb-3'>
-              <div>
+            <div className='d-flex mb-3 flex-wrap'>
+              <div className={'me-auto'}>
                 <label htmlFor=''>
                   <input type='checkbox' className='me-2' />
                   Remember me
                 </label>
               </div>
 
-              <div className={'ms-auto'}>
+              <div>
                 I forgot my password
               </div>
             </div>
