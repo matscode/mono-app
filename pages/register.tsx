@@ -6,19 +6,23 @@ import Link from 'next/link'
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Mono App</title>
-      </Head>
-
       <main className='card card-body auth-card'>
         <MonoLogo />
 
         <p className='my-4 text-center'>
-          Securely login to your account
+          Track all your bank expenses in one place
         </p>
 
         <section>
           <form action=''>
+            <div className='d-flex mb-3'>
+              <input type='text' className='form-control me-3'
+                     placeholder='First name' />
+
+              <input type='text' className='form-control'
+                     placeholder='Last name' />
+            </div>
+
             <div className='mb-3'>
               <input type='text' className='form-control' placeholder='Email' />
             </div>
@@ -28,30 +32,17 @@ const Home: NextPage = () => {
                      placeholder='Password' />
             </div>
 
-            <div className='d-flex mb-3'>
-              <div>
-                <label htmlFor=''>
-                  <input type='checkbox' className='me-2' />
-                  Remember me
-                </label>
-              </div>
-
-              <div className={'ms-auto'}>
-                I forgot my password
-              </div>
-            </div>
-
             <div className='mb-4'>
               <input type='button'
                      className='btn btn-primary default-btn w-100'
-                     value='LOG IN' />
+                     value='GET STARTED' />
             </div>
 
             <div className='text-center'>
-              <Link href='/register'>
+              <Link href='/'>
                 <a>
-                  Don’t have an account? <span
-                  className={'sign-up-link'}>Sign up</span>
+                  Already have an account? <span
+                  className={'sign-up-link'}>Sign in</span>
                 </a>
               </Link>
             </div>

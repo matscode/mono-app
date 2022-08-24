@@ -1,26 +1,44 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+
+body {
+    height: 100vh;
+    font-size: 15px;
+    background-color: #101010;
+    color: #101010;
+}
+
+
+.auth-card {
+    max-width: 609px;
+    padding: 50px 128px;
+}
+
+input.form-control, input[type=button], button {
+    padding: 16px 21px;
+}
+
+input.form-control {
+    border-color: #101010;
+}
+
+input[type=button] {
+    background-color: #6979F8;
+    border-color: transparent;
+}
+
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+.sign-up-link {
+    text-decoration: underline;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.mono-logo {
+    width: 164px;
 }
