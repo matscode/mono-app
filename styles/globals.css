@@ -12,7 +12,6 @@ body {
     color: #101010;
 }
 
-
 .auth-card {
     max-width: 609px;
     padding: 50px 128px;
@@ -39,6 +38,29 @@ a {
     text-decoration: underline;
 }
 
-.mono-logo {
-    width: 164px;
+nav.side-menu {
+    color: white;
+    font-size: 20px;
+}
+
+nav.side-menu > a.nav-link {
+    padding: 15px 15px 15px 0;
+    color: rgba(255,255,255, 0.5);
+}
+
+nav.side-menu > a.nav-link.active {
+    color: #fff;
+}
+
+.link-account-card {
+    min-width: 393px;
+    min-height: 320px;
+    color: #fff;
+    background-color: #101010;
+    border-radius: 10px;
+    padding: 45px 70px;
+}
+
+.link-account-btn {
+    color: #182CD1;
 }

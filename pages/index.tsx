@@ -2,8 +2,11 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import MonoLogo from '../components/MonoLogo'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -42,9 +45,13 @@ const Home: NextPage = () => {
             </div>
 
             <div className='mb-4'>
-              <input type='button'
-                     className='btn btn-primary default-btn w-100'
-                     value='LOG IN' />
+              <button
+                type='button'
+                className='btn btn-primary default-btn w-100'
+                onClick={() => router.push('/dashboard')}
+              >
+                LOG IN
+              </button>
             </div>
 
             <div className='text-center'>
