@@ -1,16 +1,14 @@
 import type { NextPage } from 'next'
 import MonoLogo from '@/components/MonoLogo'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { destroyUserSession, updateUser } from '../store/userSlice'
 import useAuth from '@/hooks/useAuth'
 import { useDispatch } from '@/hooks/redux'
 
 const Home: NextPage = () => {
-  const router = useRouter()
-  const {loggedIn} = useAuth();
+  useAuth(true)
 
-  if(!loggedIn) router.push('/')
   const dispatch = useDispatch()
 
   const [linkAccount, setLinkAccount] = useState(false)

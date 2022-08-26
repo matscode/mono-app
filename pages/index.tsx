@@ -15,9 +15,7 @@ const Home: NextPage = () => {
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
 
-  const { loggedIn } = useAuth()
-
-  if(loggedIn) router.push('/dashboard');
+  useAuth()
 
   const formIsValid = email && password;
 
