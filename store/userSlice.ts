@@ -4,8 +4,8 @@ import type { RootState } from './index'
 
 // Define a type for the slice state
 interface User {
-  email?: string;
-  password?: string;
+  type?: string;
+  token?: string;
 }
 
 // Define the initial state using that type
