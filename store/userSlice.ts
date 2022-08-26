@@ -4,7 +4,7 @@ import type { RootState } from './index'
 import { IUser } from '@/types/index'
 
 // Define the initial state using that type
-const initialState: IUser = {} as IUser
+const initialState: IUser = <IUser>{}
 
 export const userSlice = createSlice({
   name: 'user',
@@ -13,7 +13,9 @@ export const userSlice = createSlice({
     updateUser: (state, action: PayloadAction<IUser>) => ({
       ...state, ...action.payload,
     }),
-    destroyUserSession: (state) => ({}),
+    destroyUserSession: (state) => {
+      return <IUser>{}
+    },
   },
 })
 
