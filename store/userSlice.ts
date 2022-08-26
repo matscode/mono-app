@@ -13,7 +13,7 @@ export const userSlice = createSlice({
     updateUser: (state, action: PayloadAction<IUser>) => ({
       ...state, ...action.payload,
     }),
-    destroyUserSession: () => ({}),
+    destroyUserSession: (state) => ({}),
   },
 })
 
