@@ -1,10 +1,17 @@
 import type { NextPage } from 'next'
-import MonoLogo from '../components/MonoLogo'
+import MonoLogo from '@/components/MonoLogo'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import { destroyUserSession, updateUser } from '../store/userSlice'
+import useAuth from '@/hooks/useAuth'
+import { useDispatch } from '@/hooks/redux'
 
 const Home: NextPage = () => {
   const router = useRouter()
+  const {loggedIn} = useAuth();
+
+  if(!loggedIn) router.push('/')
+  const dispatch = useDispatch()
 
   const [linkAccount, setLinkAccount] = useState(false)
 
@@ -24,7 +31,7 @@ const Home: NextPage = () => {
           <a className='nav-link' href='#'>Settings</a>
           <a className='nav-link' href='#' onClick={(e) => {
             e.preventDefault()
-            router.push('/')
+            dispatch(destroyUserSession())
           }}>Logout</a>
         </nav>
       </aside>
@@ -66,7 +73,8 @@ const Home: NextPage = () => {
 
               <div className='mb-3'>
                 <input type='text' className='form-control'
-                       placeholder='Account name' />
+                       placeholder='Account name'
+                />
               </div>
 
               <div className='d-flex justify-content-end'>

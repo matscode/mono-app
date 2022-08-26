@@ -4,7 +4,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-
 body {
     height: 100vh;
     font-size: 15px;
@@ -17,7 +16,7 @@ body {
     padding: 50px 128px;
 }
 
-input.form-control, input[type=button], button {
+input.form-control, input[type=button], button.btn.default-btn {
     padding: 16px 21px;
 }
 
@@ -46,6 +45,10 @@ nav.side-menu {
 nav.side-menu > a.nav-link {
     padding: 15px 15px 15px 0;
     color: rgba(255,255,255, 0.5);
+}
+
+nav.side-menu > a.nav-link:hover {
+    color: #fff;
 }
 
 nav.side-menu > a.nav-link.active {

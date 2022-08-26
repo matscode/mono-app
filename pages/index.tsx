@@ -3,9 +3,31 @@ import Head from 'next/head'
 import MonoLogo from '../components/MonoLogo'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
+import Axios from '@/services/Axios'
+import useAuth from '@/hooks/useAuth'
+import { useDispatch } from '@/hooks/redux'
+import { updateUser } from '../store/userSlice'
 
 const Home: NextPage = () => {
-  const router = useRouter();
+  const router = useRouter()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const dispatch = useDispatch()
+
+  const { loggedIn } = useAuth()
+
+  if(loggedIn) router.push('/dashboard');
+
+  const formIsValid = email && password;
+
+  function login() {
+    Axios.post('/v1/user/login', { email, password }).then(({ data }) => {
+      dispatch(updateUser(data))
+    }).catch(() => {
+      alert('Login not successful!')
+    })
+  }
 
   return (
     <>
@@ -23,12 +45,16 @@ const Home: NextPage = () => {
         <section>
           <form action=''>
             <div className='mb-3'>
-              <input type='text' className='form-control' placeholder='Email' />
+              <input type='text' className='form-control' placeholder='Email'
+                     value={email}
+                     onChange={(e) => setEmail(e.target.value)} />
             </div>
 
             <div className='mb-4'>
               <input type='password' className='form-control'
-                     placeholder='Password' />
+                     placeholder='Password'
+                     value={password}
+                     onChange={(e) => setPassword(e.target.value)} />
             </div>
 
             <div className='d-flex mb-3 flex-wrap'>
@@ -48,7 +74,8 @@ const Home: NextPage = () => {
               <button
                 type='button'
                 className='btn btn-primary default-btn w-100'
-                onClick={() => router.push('/dashboard')}
+                onClick={login}
+                disabled={!formIsValid}
               >
                 LOG IN
               </button>
