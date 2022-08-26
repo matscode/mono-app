@@ -41,6 +41,7 @@ const Home: NextPage = () => {
         <section className='link-account-card text-center'>
           {!linkAccount ?
             (<div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src='padlock.svg' alt='' style={{ width: '60px' }}
                    className='mb-2' />
               <h3 className={'mb-3'}>Final Step</h3>
@@ -51,6 +52,7 @@ const Home: NextPage = () => {
                 onClick={() => setLinkAccount(true)}
               >
                 LINK NOW
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src='arrow-right.svg'
                   alt=''
