@@ -4,6 +4,8 @@ const Axios = axios.create({
   baseURL: process.env.API_SERVER_URL || process.env.apiServerUrl,
 });
 
+axios.defaults.headers.common['Content-Type'] = 'application/json';
+
 // eslint-disable-next-line func-names
 Axios.prototype.setAuthorization = function (token: String): void {
   if (token) {

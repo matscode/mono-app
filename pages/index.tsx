@@ -21,7 +21,7 @@ const Home: NextPage = () => {
 
   function login() {
     Axios.post('/v1/user/login', { email, password }).then(({ data }) => {
-      dispatch(updateUser(data))
+      dispatch(updateUser(data.user))
     }).catch(() => {
       alert('Login not successful!')
     })
